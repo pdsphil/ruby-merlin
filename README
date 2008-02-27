@@ -1,0 +1,28 @@
+== Notes
+
+This code has come straight from a production Rails app. It will soon be a Rails plugin, but for now, I suggest putting it in the lib/ directory of your Rails project.
+
+You must have a valid Merlin account to test or use this code.
+
+== ID data via Merlin
+
+To use the IDDetail classes, load irb or script/console. You must "require 'id_detail'" to proceed. Once you have the libraries required, there are a few simple statements to call the Merlin API given a SSN:
+
+sub = API::IDDetail::Subject.new("your SSN")
+sub.locate
+
+After calling the locate() method, the sub object will have a parsed set of data in its identity attribute - 'sub.identity' to access.
+
+== Configuration
+
+The id_detail directory must contain a file called 'config.yml' using the following format:
+
+# Merlin API username and password
+username: your_api_username
+password: your_api_password
+
+It is recommended that you symlink this file to the directory after deploy for security reasons. This file is also required for development mode - just fill with dummy data.
+
+== Tests
+
+To run the rspec tests, make sure you are in the id_detail directory and type 'spec -cfs spec/' - these tests do not hit the API directly, they use fixtures.
