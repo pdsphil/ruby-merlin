@@ -2,7 +2,7 @@
 
 This code has come straight from a production Rails app. It will soon be a Rails plugin, but for now, I suggest putting it in the lib/ directory of your Rails project.
 
-You must have a valid Merlin account to test or use this code.
+You must have a valid Merlin account to test or use this code. Each API does cost money.
 
 == ID data via Merlin
 
